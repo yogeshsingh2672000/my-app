@@ -28,11 +28,7 @@ function App() {
             element={<TextForm title="Enter the text to analyze" mode={mode} />}
           />
 
-          <Route
-            exact
-            path="/about"
-            element={<About mode={mode} toggleMode={toggleMode} />}
-          />
+          <Route exact path="/about" element={<About mode={mode} />} />
         </Routes>
       </Router>
     </>
