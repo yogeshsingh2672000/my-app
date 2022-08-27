@@ -50,19 +50,39 @@ const TextForm = (props) => {
             }}
           ></textarea>
         </div>
-        <button className="btn btn-danger m-2" onClick={handleClear}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-danger m-2"
+          onClick={handleClear}
+        >
           Clear Text
         </button>
-        <button className="btn btn-primary m-2" onClick={handleUpClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary m-2"
+          onClick={handleUpClick}
+        >
           Convert to Uppercase
         </button>
-        <button className="btn btn-primary m-2" onClick={handleDownClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary m-2"
+          onClick={handleDownClick}
+        >
           Convert to Lowercase
         </button>
-        <button className="btn btn-primary m-2" onClick={handleCopy}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary m-2"
+          onClick={handleCopy}
+        >
           Copy to Clipboard
         </button>
-        <button className="btn btn-primary m-2" onClick={handleExtraSpaces}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary m-2"
+          onClick={handleExtraSpaces}
+        >
           Remove Extra Space
         </button>
       </div>
@@ -70,7 +90,7 @@ const TextForm = (props) => {
         <h1>Your Text Summary</h1>
         <p>
           {
-            text.split(" ").filter((element) => {
+            text.split(/\s+/).filter((element) => {
               return element.length !== 0;
             }).length
           }{" "}
